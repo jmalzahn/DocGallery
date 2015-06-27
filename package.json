@@ -1,0 +1,25 @@
+{
+  "name": "docgallery",
+  "version": "1.0.0",
+  "description": "document gallery built with knockout.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmalzahn/DocGallery.git"
+  },
+  "author": "Jason Malzahn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmalzahn/DocGallery/issues"
+  },
+  "homepage": "https://github.com/jmalzahn/DocGallery#readme",
+  "devDependencies": {
+    "grunt": "^0.4.5"
+  },
+  "dependencies": {
+    "grunt-contrib-watch": "^0.6.1"
+  }
+}
