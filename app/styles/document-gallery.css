@@ -2,5 +2,49 @@
   position: relative;
   width: 250px;
   height: 150px;
-  background-color: yellow;
+  background-color: #f0f0f0;
+}
+
+.document-gallery .document-gallery-placeholder {
+  opacity: 1;
+}
+
+.document-gallery .document-gallery-image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.cover {
+  background-size: cover;
+}
+
+.contain {
+  background-size: contain;
+}
+
+.document-gallery .fade-out {
+  opacity: 0;
+  
+  -webkit-transition: opacity 0.5s linear;
+  -moz-transition: opacity 0.5s linear;
+  -o-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
+}
+
+.document-gallery-desc {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  opacity: 0.5;
+}
+
+.document-gallery-desc span {
+  float: right;
 }

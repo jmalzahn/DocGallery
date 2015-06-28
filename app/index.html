@@ -3,22 +3,46 @@
 <head>
   <title>doc gallery test</title>
   <link rel="stylesheet" href="styles/document-gallery.css" />
+  <link rel="import" href="templates/document-gallery.html" />
   
   <script src="http://localhost:35729/livereload.js"></script>
   
   <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
   <script type="text/javascript" src="bower_components/knockout/dist/knockout.js"></script>
+  <script type="text/javascript" src="scripts/document-gallery-ns.js"></script>
   <script type="text/javascript" src="scripts/document-gallery.js"></script>
+  <script type="text/javascript" src="scripts/document-gallery-item.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
       var viewModel = new dg.DocumentGallery({});
-      ko.applyBindings(viewModel, $("#DocumentGallery")[0]);
+      ko.applyBindings(viewModel);
     });
   </script>
 </head>
 <body>
-  <div id="DocumentGallery" class="document-gallery">
-    <h2>hello world</h2>
+  <div id="DocumentGallery_Container">
+    <div id="DocumentGallery" class="document-gallery">
+      
+      <!-- ko with: $data.item -->
+      <div class="document-gallery-image" data-bind="style: { backgroundImage: $data.imageCss }, css: $parent.config.sizing ? 'cover' : 'contain'">
+      </div>
+      <!-- /ko -->
+      
+      <div class="document-gallery-placeholder document-gallery-image fade-out" data-bind="css: $data.config.sizing ? 'cover' : 'contain'"></div>
+      
+      <div class="document-gallery-desc">
+        <span data-bind="text: $data.index() + 1 + '/' + $data.gallery().length"></span>
+        
+        <!-- ko with: $data.item -->
+        <p data-bind="text: $data.description"></p>
+        <!-- /ko -->
+      </div>
+    </div>
+    
+    <input id="btnPrev" type="button" value="Prev" />
+    <input id="btnNext" type="button" value="Next" />
+    <input id="btnDownload" type="button" value="Download" />
+    <input id="btnExpand" type="button" value="Expand" />
   </div>
 </body>
 </html>
